@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "md-ng-schematics",
+  "title": "Angular Schematics for components, modules and services. All documented, by Munardt.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Name of the component, module or service",
+      "type": "string",
+      "x-prompt": "Digite o nome do componente..."
+    },
+    "path": {
+      "description": "Path to the component, module or service",
+      "type": "string",
+      "format": "path",
+      "x-prompt": "Qual seria o local do componente?",
+      "default": "src/app/pages"
+    },
+    "main": {
+      "description": "Determine if module and route need created",
+      "type": "boolean",
+      "x-prompt": "Necessita de um módulo e de rota para este componente?",
+      "default": "true"
+    },
+    "ns": {
+      "type": "object",
+      "description": "Determine if service need created",
+      "properties": {
+        "create": {
+          "description": "Determine if service need created",
+          "type": "boolean",
+          "x-prompt": "Necessita de um serviço para este componente?",
+          "default": "false"
+        },
+        "path": {
+          "type": "string",
+          "format": "path",
+          "x-prompt": "Qual seria o local do serviço?",
+          "default": "src/app/shared/services"
+        }
+      },
+      "required": ["create"]
+    }
+  },
+  "required": ["name"]
+}

@@ -1,0 +1,19 @@
+import { TestBed } from '@angular/core/testing';
+import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service';
+import { TestServiceCreate } from 'src/app/shared/models/constants/tests.constants';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+describe(<%= classify(name) %>Service.name, () => {
+  let service: <%= classify(name) %>Service;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+    });
+    service = TestBed.inject(<%= classify(name) %>Service);
+  });
+
+  it(TestServiceCreate, () => {
+    expect(service).toBeTruthy();
+  });
+});

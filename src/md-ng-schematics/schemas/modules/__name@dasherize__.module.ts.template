@@ -1,0 +1,18 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+import { PageHeaderModule } from 'src/app/shared/components/page-header/page-header.module';
+import { <%= classify(name) %>Routes } from './<%= dasherize(name) %>.routes';
+import { UtilsModule } from 'src/app/shared/modules/utils/utils.module';
+
+@NgModule({
+  declarations: [<%= classify(name) %>Component],
+  imports: [
+    <%= classify(name) %>Routes,
+    CommonModule,
+    PageHeaderModule,
+    UtilsModule,
+  ],
+  exports: [<%= classify(name) %>Component],
+})
+export class <%= classify(name) %>Module {}

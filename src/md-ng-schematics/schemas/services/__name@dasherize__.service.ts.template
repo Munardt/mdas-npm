@@ -1,0 +1,24 @@
+import { Injectable } from '@angular/core';
+import { ApiConnectionService } from 'src/app/shared/services/api/api-connection.service';
+import { ConstantsService } from 'src/app/shared/services/constants/constants.service';
+
+/**
+ * Descreva brevemente o seu serviço.
+ *
+ * @description Faça uma descrição detalhada do seu serviço, explicando
+ * o que e como ele deve realizar.
+ */
+@Injectable({
+  providedIn: 'root',
+})
+export class <%= classify(name) %>Service {
+  /**
+   * Inicializa os serviços na inicialização do serviço
+   * @param {ApiConnectionService} api Serviço da API
+   * @param {ConstantsService} consts Serviço das Constantes
+   */
+  constructor(
+    private readonly api: ApiConnectionService,
+    private readonly consts: ConstantsService,
+  ) {}
+}

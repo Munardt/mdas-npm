@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "component": {
+      "description": "Create a documented and tested component, and your dependencies.",
+      "factory": "./md-ng-schematics/index#autoCreateComponent",
+      "schema": "./md-ng-schematics/schema.json",
+      "aliases": ["ngc"]
+    }
+  }
+}

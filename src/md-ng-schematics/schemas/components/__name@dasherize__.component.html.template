@@ -1,0 +1,7 @@
+<main>
+  <section>
+    <h1>
+      <%= classify(name) %> say hello! It's time to configure your component.
+    </h1>
+  </section>
+</main>

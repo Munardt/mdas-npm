@@ -1,0 +1,35 @@
+import { Component, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+/**
+ * Breve e pontual descrição do componente.
+ * 
+ * @description Descrição elaborada e detalhada do componente.
+ * 
+ * @implements {OnDestroy} OnDestroy - Responsável por destruir o componente assim que ele não for mais necessário .
+ */
+@Component({
+  selector: '<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  styleUrl: './<%= dasherize(name) %>.component.scss',
+})
+export class <%= classify(name) %>Component implements OnDestroy {
+  /** Recebe as incrições do componente */
+  private subscription: Subscription = new Subscription();
+
+  /**
+   * Inicializa os serviços e injector informados, na inicialização do componente.
+   */
+  constructor() {} 
+
+  
+  /**
+   * Destrói a inscrição do componente, para evitar vazamentos de memória.
+   * 
+   * @description Utilizado para que ao destruir o componente, a inscrição seja destruída
+   * junto com ele, dessa forma evitando vazamentos de memória e melhorando a performance.
+   */
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+}
